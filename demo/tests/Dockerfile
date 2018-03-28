@@ -1,0 +1,3 @@
+FROM locust
+
+COPY . /

@@ -1,0 +1,6 @@
+*:8080
+
+browse /home/tsampson/Talks/perf_testing/demo/sut
+errors stderr
+log stdout
+

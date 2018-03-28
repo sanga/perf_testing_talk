@@ -1,0 +1,26 @@
+version: '3'
+services:
+  sut:
+    build: sut
+    ports:
+      - "8080:8080"
+  locustslave:
+    build: tests
+    entrypoint:
+      - locust
+      - -f
+      - caddy.py
+      - --host=http://sut:8080
+      - --slave
+      - --master-host=locustmaster
+  locustmaster:
+    build: tests
+    ports:
+      - "8089:8089"
+    entrypoint:
+      - locust
+      - -f
+      - caddy.py
+      - --host=http://sut:8080
+      - --master
+

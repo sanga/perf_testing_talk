@@ -1,5 +1,7 @@
-# perf_testing
+Talk about perf testing and locust and scripts for demo
 
-## Installation
+open talk.html in your browser to see the talk
 
-## Configuration
+To run the demo (you need a recent docker and docker-compose)
+
+Run: cd demo && docker-compose up --scale locustslave=5
